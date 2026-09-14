@@ -1,55 +1,38 @@
 import { useState } from 'react'
 import Line from './Line'
-import { SeaBack, SeaFront } from './SeaScene'
+import Reveal from './Reveal'
 import SpiceRoute from './SpiceRoute'
 import { releasePointer, trackPointer } from '../lib/pointer'
 
 const legs = ['Texel', 'Kaap de Goede Hoop', 'Indische Oceaan', 'Molukken']
 const cargo = ['Nootmuskaat', 'Foelie', 'Kruidnagel']
 
-/** Act 2 — the cargo leaves the quay and runs south. */
 export default function OceanVoyage() {
   const [active, setActive] = useState<string | null>(null)
 
   return (
     <section className="voyage">
       <div
-        className="scene"
+        className="voyage-plate"
         onPointerMove={trackPointer}
         onPointerLeave={releasePointer}
       >
-        <div className="scene-layer scene-back">
-          <SeaBack />
-        </div>
+        <img
+          src="/merchant.jpg"
+          alt="De koopman kijkt naar de vloot — The merchant faces the fleet"
+        />
+        <div className="voyage-shade" />
         <SpiceRoute active={active} onActive={setActive} />
-        <div className="scene-layer scene-front">
-          <SeaFront />
-        </div>
-        <div className="scene-vignette" />
       </div>
 
-      <div className="copy">
-        <span className="act-label">Tweede bedrijf — de reis</span>
-
-        <Line
-          as="h2"
-          className="title"
-          nl="De vracht gaat zuid."
-          en="The cargo runs south."
-        />
-
+      <Reveal className="voyage-copy">
+        <p className="eyebrow">Tweede bedrijf — de reis</p>
+        <Line as="h2" className="title" nl="De vracht gaat zuid." en="The cargo runs south." />
         <Line
           as="p"
           className="note"
-          nl="Eerst het boek. Dan het schip."
-          en="First the book. Then the ship."
-        />
-
-        <Line
-          as="p"
-          className="note"
-          nl="Door de Indische Oceaan, naar de specerijeilanden."
-          en="Across the Indian Ocean, to the spice islands."
+          nl="Eerst het boek. Dan het schip. Door de Indische Oceaan, naar de specerijeilanden."
+          en="First the book. Then the ship. Across the Indian Ocean, to the spice islands."
         />
 
         <ul className="route-legs">
@@ -70,7 +53,7 @@ export default function OceanVoyage() {
             <li key={word}>{word}</li>
           ))}
         </ul>
-      </div>
+      </Reveal>
     </section>
   )
 }

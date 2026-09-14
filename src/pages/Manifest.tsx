@@ -8,6 +8,7 @@ export default function Manifest() {
   return (
     <div className="page">
       <div className="page-head">
+        <p className="eyebrow">Tien akten</p>
         <h1>MANIFEST</h1>
         <Line nl="Tien akten. Niet meer." en="Ten deeds. No more." />
       </div>
