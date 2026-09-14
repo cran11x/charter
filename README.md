@@ -22,6 +22,9 @@ npm run lint
 | `/manifest/:lot` | One deed, `01`–`10`                              |
 | `/charter`       | Octrooi — the house share                        |
 
+The homepage hero is the harbor loop `public/header.mp4`, with `header.jpg` as the poster
+and reduced-motion fallback.
+
 ## Adding pictures and videos
 
 The site is built to grow as a wall of plates. Drop a file in `public/`, then
