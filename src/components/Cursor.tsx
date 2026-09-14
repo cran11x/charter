@@ -25,7 +25,11 @@ export default function Cursor() {
       const target = e.target
       hot =
         target instanceof Element &&
-        Boolean(target.closest('a, button, .deed-link, .route-legs li, .cargo-words li'))
+        Boolean(
+          target.closest(
+            'a, button, .deed-link, .route-legs li, .cargo-words li, .tile, .room, .hero-plate',
+          ),
+        )
       node.classList.toggle('is-hot', hot)
     }
 

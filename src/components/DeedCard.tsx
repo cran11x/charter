@@ -110,7 +110,7 @@ function CargoMark({ id }: { id: number }) {
 }
 
 const DISPLAY = 'Cinzel, serif'
-const BODY = 'Source Sans 3, sans-serif'
+const BODY = 'Outfit, sans-serif'
 
 export default function DeedCard({ deed }: { deed: Deed }) {
   const lot = lotNumber(deed.id)

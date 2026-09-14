@@ -12,7 +12,7 @@ export default function Deed() {
     return (
       <div className="page">
         <Link to="/manifest" className="back">
-          &larr; Manifest
+          ← Manifest
         </Link>
         <div className="soon">
           <Line
@@ -28,7 +28,7 @@ export default function Deed() {
   return (
     <div className="page">
       <Link to="/manifest" className="back">
-        &larr; Manifest
+        ← Manifest
       </Link>
 
       <div className="deed-detail">
@@ -42,6 +42,7 @@ export default function Deed() {
 
         <div>
           <div className="page-head">
+            <p className="eyebrow">{deed.cargo}</p>
             <h1>{deed.titleNl}</h1>
             <span className="lot">{`${lotNumber(deed.id)} / ${EDITION}`}</span>
           </div>
@@ -64,7 +65,7 @@ export default function Deed() {
               </tr>
               <tr>
                 <th>Keten / Chain</th>
-                <td>Robinhood Chain &middot; 4663</td>
+                <td>Robinhood Chain · 4663</td>
               </tr>
               <tr>
                 <th>Staat / Status</th>

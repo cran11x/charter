@@ -1,4 +1,5 @@
-import { NavLink, Outlet } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import Clock from './components/Clock'
 import Cursor from './components/Cursor'
 
@@ -9,10 +10,23 @@ const nav = [
 ]
 
 export default function App() {
+  const { pathname } = useLocation()
+  const home = pathname === '/'
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
     <>
       <Cursor />
-      <header className="topbar">
+      <header
+        className={`topbar${home ? ' is-home' : ''}${scrolled || !home ? ' is-solid' : ''}`}
+      >
         <NavLink to="/" end className="brand">
           CHARTER
         </NavLink>
