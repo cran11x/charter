@@ -4,13 +4,13 @@
  * kind: 'image' | 'video'
  * src:  public path, e.g. '/voyage.mp4'
  * poster: first frame for video (and reduced-motion fallback)
- * span: 'wide' | 'tall' | 'square' | 'hero'  — bento size on the wall
+ * span: 'wide' | 'tall' | 'square' | 'hero' | 'feature'  — bento size on the wall
  * objectPosition: optional crop, same file used as a study
  * coming: true — hung as an empty frame until you add the file
  */
 
 export type MediaKind = 'image' | 'video'
-export type Span = 'wide' | 'tall' | 'square' | 'hero'
+export type Span = 'wide' | 'tall' | 'square' | 'hero' | 'feature'
 
 export type Plate = {
   id: string
@@ -35,7 +35,7 @@ export const plates: Plate[] = [
     titleEn: 'The quay',
     captionNl: 'Zonsondergang over de pakhuizen. Het boek gaat open.',
     captionEn: 'Sunset over the warehouses. The book opens.',
-    span: 'wide',
+    span: 'feature',
     objectPosition: 'center 42%',
   },
   {
@@ -81,17 +81,6 @@ export const plates: Plate[] = [
     captionNl: 'Een lus op zee volgt.',
     captionEn: 'A loop at sea will follow.',
     span: 'square',
-    coming: true,
-  },
-  {
-    id: 'pakhuis',
-    kind: 'image',
-    src: '/warehouse.jpg',
-    titleNl: 'Het pakhuis',
-    titleEn: 'The warehouse',
-    captionNl: 'Binnen, na de bel.',
-    captionEn: 'Inside, after the bell.',
-    span: 'wide',
     coming: true,
   },
 ]

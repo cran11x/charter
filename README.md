@@ -37,7 +37,7 @@ register it in `src/data/gallery.ts`.
   titleEn: 'Batavia',
   captionNl: 'Avond aan de kade.',
   captionEn: 'Evening on the quay.',
-  span: 'wide', // 'wide' | 'tall' | 'square' | 'hero'
+  span: 'wide', // 'wide' | 'tall' | 'square' | 'hero' | 'feature'
 }
 ```
 
